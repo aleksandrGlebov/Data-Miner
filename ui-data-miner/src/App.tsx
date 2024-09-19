@@ -1,9 +1,9 @@
 import React from 'react';
-import KnowledgeAssistant from './components/KnowledgeAssistant';
+import MainPage from './components/MainPage';
 
 const App: React.FC = () => {
   return (
-    <KnowledgeAssistant />
+    <MainPage />
   );
 }
 
