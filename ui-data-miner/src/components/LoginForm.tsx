@@ -13,6 +13,11 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin, isDarkMode, toggleDarkMo
   const textColor = isDarkMode ? 'text-white' : 'text-gray-900';
   const inputBgColor = isDarkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-300';
 
+  const handleToggleDarkMode = (e: React.MouseEvent) => {
+    e.preventDefault();
+    toggleDarkMode();
+  };
+
   return (
     <div className={`flex items-center justify-center h-screen ${bgColor} ${textColor}`}>
       <form onSubmit={onLogin} className={`p-8 rounded shadow-md ${formBgColor}`}>
@@ -38,9 +43,10 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin, isDarkMode, toggleDarkMo
         <div className="mt-4 flex items-center justify-between">
           <span className="text-sm">Dark Mode</span>
           <button 
-            onClick={toggleDarkMode} 
+            onClick={handleToggleDarkMode} 
             className={`w-12 h-6 rounded-full p-1 ${isDarkMode ? 'bg-blue-600' : 'bg-gray-300'}`}
             aria-label="Toggle dark mode"
+            type="button"
           >
             <div 
               className={`w-4 h-4 rounded-full bg-white transition-transform ${
